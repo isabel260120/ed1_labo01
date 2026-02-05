@@ -9,7 +9,7 @@ public class Main {
             array[i]=i;
         }
         return array;
-    };// Reemplácelo por una función lambda
+    };
 
     private static final ArrayGenerator<Integer> invertedArrayGenerator = (int length)->{
         Integer[] array=new Integer[length];
