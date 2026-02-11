@@ -17,7 +17,7 @@ public class Main {
             array[i]=length -i;
         }
         return array;
-    }; // Reemplácelo por una función lambda
+    };
 
     private static final ArrayGenerator<Integer> randomArrayGenerator = (int length)->{
         Random random=new Random();
@@ -26,15 +26,17 @@ public class Main {
             array[i]=random.nextInt(length);
         }
         return array;
-    }; // Reemplácelo por una función lambda
+    };
+
 
     //complejidad de tiempo y espacio lineal pq solo tiene un ciclo (lineal) siempre va a tener la misma n misma longitud(espacio)
 
-    private static final QuickSort<Integer> highPivotQuickSort = null; // Reemplácelo por una referencia a un método
+    private static final QuickSort<Integer> highPivotQuickSort = SortingAlgorithms::highPivotQuickSort; // Reemplácelo por una referencia a un método
 
-    private static final QuickSort<Integer> lowPivotQuickSort = null; // Reemplácelo por una referencia a un método
 
-    private static final QuickSort<Integer> randomPivotQuickSort = null; // Reemplácelo por una referencia a un método
+    private static final QuickSort<Integer> lowPivotQuickSort = SortingAlgorithms::lowPivotQuickSort; // Reemplácelo por una referencia a un método
+
+    private static final QuickSort<Integer> randomPivotQuickSort = SortingAlgorithms::randomPivotQuickSort; // Reemplácelo por una referencia a un método
 
     public static QuickSort<Integer> getHighPivotQuickSort() {
         return highPivotQuickSort;
