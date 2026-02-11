@@ -3,27 +3,27 @@ package ed.lab;
 import java.util.Random;
 
 public class Main {
-    private static final ArrayGenerator<Integer> sortedArrayGenerator = (int length)->{
-        Integer[] array=new Integer[length];
+    private static final ArrayGenerator<String> sortedArrayGenerator = (int length)->{
+        String[] array=new String[length];
         for (int i=0; i<length;i++){
-            array[i]=i;
+            array[i]= String.format ("%06d", i);
         }
         return array;
     };
 
-    private static final ArrayGenerator<Integer> invertedArrayGenerator = (int length)->{
-        Integer[] array=new Integer[length];
+    private static final ArrayGenerator<String> invertedArrayGenerator = (int length)->{
+        String[] array=new String[length];
         for (int i=0; i<length;i++){
-            array[i]=length -i;
+            array[i]=String.format("%06d",length -1-i);
         }
         return array;
     };
 
-    private static final ArrayGenerator<Integer> randomArrayGenerator = (int length)->{
+    private static final ArrayGenerator<String> randomArrayGenerator = (int length)->{
         Random random=new Random();
-        Integer[] array=new Integer[length];
+        String[] array=new String[length];
         for (int i=0; i<length;i++){
-            array[i]=random.nextInt(length);
+            array[i]=String.format("%06d",random.nextInt(length));
         }
         return array;
     };
@@ -32,39 +32,39 @@ public class Main {
 
     //complejidad de tiempo y espacio lineal pq solo tiene un ciclo (lineal) siempre va a tener la misma n misma longitud(espacio)
 
-    private static final QuickSort<Integer> highPivotQuickSort = SortingAlgorithms::highPivotQuickSort; // Reemplácelo por una referencia a un método
+    private static final QuickSort<String> highPivotQuickSort = SortingAlgorithms::highPivotQuickSort; // Reemplácelo por una referencia a un método
 
 
-    private static final QuickSort<Integer> lowPivotQuickSort = SortingAlgorithms::lowPivotQuickSort; // Reemplácelo por una referencia a un método
+    private static final QuickSort<String> lowPivotQuickSort = SortingAlgorithms::lowPivotQuickSort; // Reemplácelo por una referencia a un método
 
-    private static final QuickSort<Integer> randomPivotQuickSort = SortingAlgorithms::randomPivotQuickSort; // Reemplácelo por una referencia a un método
+    private static final QuickSort<String> randomPivotQuickSort = SortingAlgorithms::randomPivotQuickSort; // Reemplácelo por una referencia a un método
 
-    public static QuickSort<Integer> getHighPivotQuickSort() {
+    public static QuickSort<String> getHighPivotQuickSort() {
         return highPivotQuickSort;
     }
 
-    public static QuickSort<Integer> getLowPivotQuickSort() {
+    public static QuickSort<String> getLowPivotQuickSort() {
         return lowPivotQuickSort;
     }
 
-    public static QuickSort<Integer> getRandomPivotQuickSort() {
+    public static QuickSort<String> getRandomPivotQuickSort() {
         return randomPivotQuickSort;
     }
 
-    public static ArrayGenerator<Integer> getSortedArrayGenerator() {
+    public static ArrayGenerator<String> getSortedArrayGenerator() {
         return sortedArrayGenerator;
     }
 
-    public static ArrayGenerator<Integer> getInvertedArrayGenerator() {
+    public static ArrayGenerator<String> getInvertedArrayGenerator() {
         return invertedArrayGenerator;
     }
 
-    public static ArrayGenerator<Integer> getRandomArrayGenerator() {
+    public static ArrayGenerator<String> getRandomArrayGenerator() {
         return randomArrayGenerator;
     }
 
     public static void main(String[] args) {
-        final SortingTester<Integer> tester = new SortingTester<>();
+        final SortingTester<String> tester = new SortingTester<>();
 
         System.out.println("Ordenando un arreglo ordenado:");
         System.out.println("\tUtilizando el último elemento como pivote: ");
