@@ -29,6 +29,7 @@ public class Main {
     };
 
 
+
     //complejidad de tiempo y espacio lineal pq solo tiene un ciclo (lineal) siempre va a tener la misma n misma longitud(espacio)
 
     private static final QuickSort<Integer> highPivotQuickSort = SortingAlgorithms::highPivotQuickSort; // Reemplácelo por una referencia a un método
